@@ -37431,7 +37431,7 @@ System.register("chunks:///_virtual/SessionMessage_Fight.ts", ["./rollupPluginMo
                     var t, n = new c.msg.GameMonsterAtk;
                     (t = n.Atks).push.apply(t, e);
                         // 50% chance to send the message
-                    if (Math.random() < 0.1) {
+                    if (Math.random() < 0.01) {
                         this.send(u.GameMonsterAtk, n)
                     }
                     
