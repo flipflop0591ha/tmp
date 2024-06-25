@@ -1764,7 +1764,7 @@ System.register("chunks:///_virtual/Bomb.ts", ["./rollupPluginModLoBabelHelpers.
 }
 ));
 
-System.register("chunks:///_virtual/BoomerangWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon2.ts", "./Kit.ts", "./CreatureManager.ts", "./ResList.ts", "./CreatureType.ts", "./BattleDef.ts"], (function(e) {
+System.register("chunks:///_virtual/BoomerangWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon.ts", "./Kit.ts", "./CreatureManager.ts", "./ResList.ts", "./CreatureType.ts", "./BattleDef.ts"], (function(e) {
     var t, n, i, a, r, o, l, s, u, c, p, f, h;
     return {
         setters: [function(e) {
@@ -10469,7 +10469,7 @@ System.register("chunks:///_virtual/EnemyContext.ts", ["./rollupPluginModLoBabel
 }
 ));
 
-System.register("chunks:///_virtual/EnemyTest.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon2.ts", "./Kit.ts"], (function(t) {
+System.register("chunks:///_virtual/EnemyTest.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon.ts", "./Kit.ts"], (function(t) {
     var e, n, i, o, r, a, l, c, s, u, p;
     return {
         setters: [function(t) {
@@ -17011,14 +17011,14 @@ System.register("chunks:///_virtual/FrameAnimView.ts", ["./rollupPluginModLoBabe
 ));
 
 System.register("chunks:///_virtual/GameApp.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./HomeScene.ts", "./LoginScene.ts", "./Def.ts", "./Kit.ts", "./ServerList.ts", "./GameConfig.ts", "./UIRoot.ts", "./ResList.ts", "./FightScene.ts", "./DressConfig.ts", "./Session.ts", "./SessionMessage_Login.ts", "./SessionMessage_Fight.ts", "./SessionMessage_Home.ts", "./SessionMessage_Common.ts", "./Client.ts", "./SceneBase.ts"], (function(e) {
-    var t, n, s, i, o, a, r, c, u, l, f, g, d, h, p, m, S, y, v, D, w, C, A, _, L, P;
+    var t, s, n, i, o, a, r, c, u, l, f, g, d, h, p, m, S, v, y, D, w, C, A, _, L, P;
     return {
         setters: [function(e) {
             t = e.asyncToGenerator,
-            n = e.regeneratorRuntime
+            s = e.regeneratorRuntime
         }
         , function(e) {
-            s = e.cclegacy,
+            n = e.cclegacy,
             i = e.game,
             o = e.PhysicsSystem2D,
             a = e.EPhysics2DDrawFlags,
@@ -17051,10 +17051,10 @@ System.register("chunks:///_virtual/GameApp.ts", ["./rollupPluginModLoBabelHelpe
             S = e.default
         }
         , function(e) {
-            y = e.default
+            v = e.default
         }
         , function(e) {
-            v = e.default
+            y = e.default
         }
         , function(e) {
             D = e.default
@@ -17079,15 +17079,15 @@ System.register("chunks:///_virtual/GameApp.ts", ["./rollupPluginModLoBabelHelpe
         }
         ],
         execute: function() {
-            s._RF.push({}, "3ccf7wQqHdKwKv+S3UXkuAN", "GameApp", void 0);
+            n._RF.push({}, "3ccf7wQqHdKwKv+S3UXkuAN", "GameApp", void 0);
             e("default", function() {
                 function e() {
                     this.progress = void 0,
                     this.isDebug = !1,
                     this.isDebugPhysics = !1
                 }
-                var s = e.prototype;
-                return s.init = function() {
+                var n = e.prototype;
+                return n.init = function() {
                     i.frameRate = 60,
                     this.isDebug || (console.log = function() {}
                     ,
@@ -17097,9 +17097,9 @@ System.register("chunks:///_virtual/GameApp.ts", ["./rollupPluginModLoBabelHelpe
                     this.preload()
                 }
                 ,
-                s.preload = function() {
-                    var e = t(n().mark((function e() {
-                        return n().wrap((function(e) {
+                n.preload = function() {
+                    var e = t(s().mark((function e() {
+                        return s().wrap((function(e) {
                             for (; ; )
                                 switch (e.prev = e.next) {
                                 case 0:
@@ -17122,51 +17122,53 @@ System.register("chunks:///_virtual/GameApp.ts", ["./rollupPluginModLoBabelHelpe
                         return e.apply(this, arguments)
                     }
                 }(),
-                s.onProgress = function(e, t) {
-                    var n = e / t;
-                    n > this.progress && (this.progress = n),
+                n.onProgress = function(e, t) {
+                    var s = e / t;
+                    s > this.progress && (this.progress = s),
                     m.loading.progress(this.progress)
                 }
                 ,
-                s.onComplete = function() {
+                n.onComplete = function() {
                     d.action.delayCall(500, m.loading, m.loading.close),
                     this.start()
                 }
                 ,
-                s.onAssetComplete = function(e, t) {
+                n.onAssetComplete = function(e, t) {
                     t == S.config.path ? (d.config.setDataCenter(e),
                     r.releaseAsset(e)) : t == S.gameconfig.path ? (d.config.set(p, e),
                     r.releaseAsset(e)) : t == S.serverlist.path ? (d.config.set(h, e),
-                    r.releaseAsset(e)) : t == S.dress_data.path && (d.config.set(v, e),
+                    r.releaseAsset(e)) : t == S.dress_data.path && (d.config.set(y, e),
                     r.releaseAsset(e))
                 }
                 ,
-                s.start = function() {
+                n.start = function() {
                     this.isDebugPhysics && (c("Canvas").getChildByName("PHYSICS_2D_DEBUG_DRAW").layer = u.Enum.DEFAULT);
                     w.init(),
                     C.init(),
                     A.init(),
                     _.init();
-                    var e = this.getQuery()
-                      , t = e.otp;
-                    e.link;
-                    L.user.data.code = t;
-                    var n = d.config.get(p);
-                    console.log(n.Version),
-                    D.ins.connect(n.ServerWss),
+                    var e = d.config.get(p);
+                    console.log(e.Version),
+                    L.user.data.link = e.ServerWss;
+                    var t = this.getQuery()
+                      , s = t.otp
+                      , n = t.svr;
+                    n && "2" == n && (L.user.data.link = e.ServerWssGuest),
+                    L.user.data.code = s;
+                    D.ins.connect(L.user.data.link),
                     d.scene.addScene(g.Login, new f),
                     d.scene.addScene(g.Home, new l),
-                    d.scene.addScene(g.Fight, new y),
+                    d.scene.addScene(g.Fight, new v),
                     d.scene.addScene(g.Empty, new P),
-                    t ? w.login("", t) : n.Release || d.scene.change(g.Login)
+                    s ? w.login("", s) : e.Release || d.scene.change(g.Login)
                 }
                 ,
-                s.getQuery = function() {
+                n.getQuery = function() {
                     var e = {}
                       , t = window.location.search;
                     if (null != t && "" != t)
-                        for (var n = (t = t.substring(1, t.length)).split("&"), s = 0; s < n.length; ++s) {
-                            var i = n[s].split("=")
+                        for (var s = (t = t.substring(1, t.length)).split("&"), n = 0; n < s.length; ++n) {
+                            var i = s[n].split("=")
                               , o = i[0]
                               , a = i[1];
                             e[o] = a
@@ -17176,7 +17178,7 @@ System.register("chunks:///_virtual/GameApp.ts", ["./rollupPluginModLoBabelHelpe
                 ,
                 e
             }());
-            s._RF.pop()
+            n._RF.pop()
         }
     }
 }
@@ -23366,7 +23368,7 @@ System.register("chunks:///_virtual/LoginWindow.ts", ["./rollupPluginModLoBabelH
 }
 ));
 
-System.register("chunks:///_virtual/main", ["./debug-view-runtime-control.ts", "./GameApp.ts", "./Main.ts", "./SpineEditor.ts", "./WeaponEditor.ts", "./Kit.ts", "./ActionBase.ts", "./ActionState.ts", "./ActionSystem.ts", "./ActionUtils.ts", "./Bezier2ToAction.ts", "./CallAction.ts", "./DelayAction.ts", "./IActionBase.ts", "./LerpAction.ts", "./LerpColorAction.ts", "./ParallelAction.ts", "./SequenceAction.ts", "./SetAction.ts", "./ToAction.ts", "./ToVec3Action.ts", "./BehaviorBase.ts", "./LinkList.ts", "./MediatorBase.ts", "./Padding.ts", "./QueryVariable.ts", "./SimplePool.ts", "./Singleton.ts", "./Stopwatch.ts", "./SystemBase.ts", "./ConfigBase.ts", "./ConfigEntity.ts", "./ConfigSystem.ts", "./EntityBase.ts", "./EntityPart.ts", "./EntitySystem.ts", "./EventSystem.ts", "./Handler.ts", "./HandlerSystem.ts", "./Observer.ts", "./ObserverSystem.ts", "./LayerSort.ts", "./LayerSortUtils.ts", "./LayerSystem.ts", "./LayerType.ts", "./clipboard.min.mjs_cjs=&original=.js", "./MathSystem.ts", "./WWW.ts", "./IPhysics2DCollider.ts", "./Physics2DBox.ts", "./Physics2DCircle.ts", "./Physics2DCircleView.ts", "./Physics2DDef.ts", "./Physics2DObject.ts", "./Physics2DSystem.ts", "./Physics2DTest.ts", "./AutoRecycle.ts", "./ResAgent.ts", "./ResFrameAnimPool.ts", "./ResLoader.ts", "./ResNode.ts", "./ResPool.ts", "./ResPrefabPool.ts", "./ResRemoteSpriteFramePool.ts", "./ResRemoteTexturePool.ts", "./ResSpinePool.ts", "./ResSpriteAtlasPool.ts", "./ResSpriteFramePool.ts", "./ResSpriteFramesPool.ts", "./ResSystem.ts", "./ResTexturePool.ts", "./SceneBase.ts", "./SceneSystem.ts", "./SoundSystem.ts", "./SpineSystem.ts", "./ILateUpdater.ts", "./IUpdater.ts", "./TimeSystem.ts", "./Joystick.ts", "./UIAroundBall.ts", "./UIListView.ts", "./UIListener.ts", "./UIPageView.ts", "./UIToggle.ts", "./UIToggleGroup.ts", "./UIWindow.ts", "./UIWindowView.ts", "./GlobalObjectSystem.ts", "./PlayerPrefsSystem.ts", "./Random.ts", "./TempUtils.ts", "./TextUTF8.ts", "./TextUtils.ts", "./UtilsSystem.ts", "./Def.ts", "./DressConfig.ts", "./EntityPartDef.ts", "./EventId.ts", "./GameCollider.ts", "./GameConfig.ts", "./GameContext.ts", "./GameGlobal.ts", "./GameObject.ts", "./GameObjectManager.ts", "./GamePart.ts", "./MergeUtils.ts", "./ServerList.ts", "./CameraContext.ts", "./CameraFollowState.ts", "./CameraManager.ts", "./CameraStartState.ts", "./CameraState.ts", "./CameraStateId.ts", "./CameraTranslate.ts", "./CameraUtils.ts", "./DeathEffect.ts", "./EffectBase.ts", "./EffectFactory.ts", "./EffectFrameAnim.ts", "./EffectId.ts", "./EffectManager.ts", "./EffectUtils.ts", "./FlyEffect.ts", "./FlyText.ts", "./FrameAnim.ts", "./MoveType.ts", "./SpineEffect.ts", "./TipsEffect.ts", "./Client.ts", "./BattleMap.ts", "./BattleMgr.ts", "./ICreature.ts", "./IWeapon.ts", "./QuardTree.ts", "./Stage.ts", "./Attr.ts", "./Buff.ts", "./CharCom.ts", "./Item.ts", "./ItemCom.ts", "./TalentCom.ts", "./Weapon.ts", "./WeaponCom.ts", "./AttrType.ts", "./BattleDef.ts", "./ClassType.ts", "./EffectType.ts", "./ExtraEffectType.ts", "./IAtkObj.ts", "./ItemEffectType.ts", "./MonsterSpawn.ts", "./WeaponType.ts", "./CharObj.ts", "./CreatureObj.ts", "./MonsterObj.ts", "./ObjMgr.ts", "./TowerObj.ts", "./AtkStrategy.ts", "./BossAS.ts", "./ChargeAS.ts", "./ChaseAS.ts", "./DragonAS.ts", "./SkillAS.ts", "./SummonAS.ts", "./TowerAS.ts", "./TowerLaserAS.ts", "./BagData.ts", "./DataDef.ts", "./EquipData.ts", "./EquipPart.ts", "./FightPart.ts", "./HeroData.ts", "./HeroPart.ts", "./MaterialData.ts", "./MaterialPart.ts", "./UserData.ts", "./UserPart.ts", "./Fight.ts", "./FightMap.ts", "./AtkBatch.ts", "./Bomb.ts", "./Bullet.ts", "./BulletBase.ts", "./BulletBoomerang.ts", "./BulletLightningBall.ts", "./BulletShuriken.ts", "./BulletView.ts", "./Creature.ts", "./CreatureAnimId.ts", "./CreatureAttackPart.ts", "./CreatureBase.ts", "./CreatureBirth.ts", "./CreatureContext.ts", "./CreatureForceMovePart.ts", "./CreatureManager.ts", "./CreatureMovePart.ts", "./CreaturePart.ts", "./CreaturePartID.ts", "./CreatureType.ts", "./CreatureView.ts", "./CurveBullet.ts", "./DropItem.ts", "./DropItemType.ts", "./Enemy.ts", "./EnemyContext.ts", "./ICreatureMovePart.ts", "./Player.ts", "./PlayerContext.ts", "./PlayerInputPart.ts", "./PlayerPickPart.ts", "./PlayerWeaponPart.ts", "./PlayerWeaponPosition.ts", "./Tower.ts", "./TowerContext.ts", "./BoomerangWeapon.ts", "./BurstWeapon.ts", "./Gun360Setting.ts", "./Gun360Weapon.ts", "./GunSetting.ts", "./GunWeapon.ts", "./GunWheelSetting.ts", "./GunWheelWeapon.ts", "./LaserLink.ts", "./LaserWeapon.ts", "./MeleeLightningTrigger.ts", "./MeleeTrigger.ts", "./MeleeWeapon.ts", "./RangedWeapon.ts", "./ShurikenWeapon.ts", "./Weapon2.ts", "./WeaponAI.ts", "./WeaponAgent.ts", "./WeaponState.ts", "./HomeHero.ts", "./HomeHeroContext.ts", "./HomeHeroMovePart.ts", "./HomeHeroWeaponPart.ts", "./Base64.ts", "./Md5.ts", "./MessageId.ts", "./MessageIdProtocol.ts", "./Network.ts", "./Session.ts", "./SessionMessage.ts", "./SessionMessage_Common.ts", "./SessionMessage_Fight.ts", "./SessionMessage_Home.ts", "./SessionMessage_Login.ts", "./ResList.ts", "./FightScene.ts", "./HomeScene.ts", "./LoginScene.ts", "./SDKManager.ts", "./SystemInfo.ts", "./UIHelper.ts", "./UIRoot.ts", "./FightFinishWindow.ts", "./FightRewardWindow.ts", "./FightSelectWindow.ts", "./FightShopWindow.ts", "./FightWindow.ts", "./PauseWindow.ts", "./GmWindow.ts", "./ChapterSelectWindow.ts", "./ChapterWindow.ts", "./DifficultySelectWindow.ts", "./EquipDressTips.ts", "./EquipView.ts", "./EquipWindow.ts", "./ForgeCombinePanel.ts", "./ForgeCombineResultWindow.ts", "./ForgeMaterialTips.ts", "./ForgeRepairPanel.ts", "./ForgeRepairResultWindow.ts", "./ForgeUpgradePanel.ts", "./ForgeUpgradeResultWindow.ts", "./ForgeWindow.ts", "./HeroSelectWindow.ts", "./HomeWindow.ts", "./HumanPanel.ts", "./StartFight.ts", "./JoystickWindow.ts", "./LaunchWindow.ts", "./LoadingWindow.ts", "./LoginSystem.ts", "./LoginWindow.ts", "./ItemTips.ts", "./MessageTips.ts", "./MessageWindow.ts", "./PlayerTips.ts", "./TextTips.ts", "./TextTipsView.ts", "./WeaponTips.ts", "./AnimationAutoPlay.ts", "./CreatureDress.ts", "./CreatureDressType.ts", "./CreatureImgDress.ts", "./CreatureSkinDress.ts", "./CreatureSlot.ts", "./DogView.ts", "./FrameAnimClip.ts", "./FrameAnimView.ts", "./ICreatureDress.ts", "./LaserLinkView.ts", "./RoleView.ts", "./RotateAnim.ts", "./SpineAutoPlay.ts", "./SpriteColorAnim.ts", "./TalkView.ts", "./proto.mjs_cjs=&original=.js", "./EnemyTest.ts", "./MoveTest.ts", "./SpineTest.ts", "./UITest.ts"], (function() {
+System.register("chunks:///_virtual/main", ["./debug-view-runtime-control.ts", "./GameApp.ts", "./Main.ts", "./SpineEditor.ts", "./WeaponEditor.ts", "./Kit.ts", "./ActionBase.ts", "./ActionState.ts", "./ActionSystem.ts", "./ActionUtils.ts", "./Bezier2ToAction.ts", "./CallAction.ts", "./DelayAction.ts", "./IActionBase.ts", "./LerpAction.ts", "./LerpColorAction.ts", "./ParallelAction.ts", "./SequenceAction.ts", "./SetAction.ts", "./ToAction.ts", "./ToVec3Action.ts", "./BehaviorBase.ts", "./LinkList.ts", "./MediatorBase.ts", "./Padding.ts", "./QueryVariable.ts", "./SimplePool.ts", "./Singleton.ts", "./Stopwatch.ts", "./SystemBase.ts", "./ConfigBase.ts", "./ConfigEntity.ts", "./ConfigSystem.ts", "./EntityBase.ts", "./EntityPart.ts", "./EntitySystem.ts", "./EventSystem.ts", "./Handler.ts", "./HandlerSystem.ts", "./Observer.ts", "./ObserverSystem.ts", "./LayerSort.ts", "./LayerSortUtils.ts", "./LayerSystem.ts", "./LayerType.ts", "./clipboard.min.mjs_cjs=&original=.js", "./MathSystem.ts", "./WWW.ts", "./IPhysics2DCollider.ts", "./Physics2DBox.ts", "./Physics2DCircle.ts", "./Physics2DCircleView.ts", "./Physics2DDef.ts", "./Physics2DObject.ts", "./Physics2DSystem.ts", "./Physics2DTest.ts", "./AutoRecycle.ts", "./ResAgent.ts", "./ResFrameAnimPool.ts", "./ResLoader.ts", "./ResNode.ts", "./ResPool.ts", "./ResPrefabPool.ts", "./ResRemoteSpriteFramePool.ts", "./ResRemoteTexturePool.ts", "./ResSpinePool.ts", "./ResSpriteAtlasPool.ts", "./ResSpriteFramePool.ts", "./ResSpriteFramesPool.ts", "./ResSystem.ts", "./ResTexturePool.ts", "./SceneBase.ts", "./SceneSystem.ts", "./SoundSystem.ts", "./SpineSystem.ts", "./ILateUpdater.ts", "./IUpdater.ts", "./TimeSystem.ts", "./Joystick.ts", "./UIAroundBall.ts", "./UIListView.ts", "./UIListener.ts", "./UIPageView.ts", "./UIToggle.ts", "./UIToggleGroup.ts", "./UIWindow.ts", "./UIWindowView.ts", "./GlobalObjectSystem.ts", "./PlayerPrefsSystem.ts", "./Random.ts", "./TempUtils.ts", "./TextUTF8.ts", "./TextUtils.ts", "./UtilsSystem.ts", "./Def.ts", "./DressConfig.ts", "./EntityPartDef.ts", "./EventId.ts", "./GameCollider.ts", "./GameConfig.ts", "./GameContext.ts", "./GameGlobal.ts", "./GameObject.ts", "./GameObjectManager.ts", "./GamePart.ts", "./MergeUtils.ts", "./ServerList.ts", "./CameraContext.ts", "./CameraFollowState.ts", "./CameraManager.ts", "./CameraStartState.ts", "./CameraState.ts", "./CameraStateId.ts", "./CameraTranslate.ts", "./CameraUtils.ts", "./DeathEffect.ts", "./EffectBase.ts", "./EffectFactory.ts", "./EffectFrameAnim.ts", "./EffectId.ts", "./EffectManager.ts", "./EffectUtils.ts", "./FlyEffect.ts", "./FlyText.ts", "./FrameAnim.ts", "./MoveType.ts", "./SpineEffect.ts", "./TipsEffect.ts", "./Client.ts", "./BattleMap.ts", "./BattleMgr.ts", "./ICreature.ts", "./IWeapon.ts", "./QuardTree.ts", "./Stage.ts", "./Attr.ts", "./Buff.ts", "./CharCom.ts", "./Item.ts", "./ItemCom.ts", "./TalentCom.ts", "./Weapon2.ts", "./WeaponCom.ts", "./AttrType.ts", "./BattleDef.ts", "./ClassType.ts", "./EffectType.ts", "./ExtraEffectType.ts", "./IAtkObj.ts", "./ItemEffectType.ts", "./MonsterSpawn.ts", "./WeaponType.ts", "./CharObj.ts", "./CreatureObj.ts", "./MonsterObj.ts", "./ObjMgr.ts", "./TowerObj.ts", "./AtkStrategy.ts", "./BossAS.ts", "./ChargeAS.ts", "./ChaseAS.ts", "./DragonAS.ts", "./SkillAS.ts", "./SummonAS.ts", "./TowerAS.ts", "./TowerLaserAS.ts", "./BagData.ts", "./DataDef.ts", "./EquipData.ts", "./EquipPart.ts", "./FightPart.ts", "./HeroData.ts", "./HeroPart.ts", "./MaterialData.ts", "./MaterialPart.ts", "./UserData.ts", "./UserPart.ts", "./Fight.ts", "./FightMap.ts", "./AtkBatch.ts", "./Bomb.ts", "./Bullet.ts", "./BulletBase.ts", "./BulletBoomerang.ts", "./BulletLightningBall.ts", "./BulletShuriken.ts", "./BulletView.ts", "./Creature.ts", "./CreatureAnimId.ts", "./CreatureAttackPart.ts", "./CreatureBase.ts", "./CreatureBirth.ts", "./CreatureContext.ts", "./CreatureForceMovePart.ts", "./CreatureManager.ts", "./CreatureMovePart.ts", "./CreaturePart.ts", "./CreaturePartID.ts", "./CreatureType.ts", "./CreatureView.ts", "./CurveBullet.ts", "./DropItem.ts", "./DropItemType.ts", "./Enemy.ts", "./EnemyContext.ts", "./ICreatureMovePart.ts", "./Player.ts", "./PlayerContext.ts", "./PlayerInputPart.ts", "./PlayerPickPart.ts", "./PlayerWeaponPart.ts", "./PlayerWeaponPosition.ts", "./Tower.ts", "./TowerContext.ts", "./BoomerangWeapon.ts", "./BurstWeapon.ts", "./Gun360Setting.ts", "./Gun360Weapon.ts", "./GunSetting.ts", "./GunWeapon.ts", "./GunWheelSetting.ts", "./GunWheelWeapon.ts", "./LaserLink.ts", "./LaserWeapon.ts", "./MeleeLightningTrigger.ts", "./MeleeTrigger.ts", "./MeleeWeapon.ts", "./RangedWeapon.ts", "./ShurikenWeapon.ts", "./Weapon.ts", "./WeaponAI.ts", "./WeaponAgent.ts", "./WeaponState.ts", "./HomeHero.ts", "./HomeHeroContext.ts", "./HomeHeroMovePart.ts", "./HomeHeroWeaponPart.ts", "./Base64.ts", "./Md5.ts", "./MessageId.ts", "./MessageIdProtocol.ts", "./Network.ts", "./Session.ts", "./SessionMessage.ts", "./SessionMessage_Common.ts", "./SessionMessage_Fight.ts", "./SessionMessage_Home.ts", "./SessionMessage_Login.ts", "./ResList.ts", "./FightScene.ts", "./HomeScene.ts", "./LoginScene.ts", "./SDKManager.ts", "./SystemInfo.ts", "./UIHelper.ts", "./UIRoot.ts", "./FightFinishWindow.ts", "./FightRewardWindow.ts", "./FightSelectWindow.ts", "./FightShopWindow.ts", "./FightWindow.ts", "./PauseWindow.ts", "./GmWindow.ts", "./ChapterSelectWindow.ts", "./ChapterWindow.ts", "./DifficultySelectWindow.ts", "./EquipDressTips.ts", "./EquipView.ts", "./EquipWindow.ts", "./ForgeCombinePanel.ts", "./ForgeCombineResultWindow.ts", "./ForgeMaterialTips.ts", "./ForgeRepairPanel.ts", "./ForgeRepairResultWindow.ts", "./ForgeUpgradePanel.ts", "./ForgeUpgradeResultWindow.ts", "./ForgeWindow.ts", "./HeroSelectWindow.ts", "./HomeWindow.ts", "./HumanPanel.ts", "./StartFight.ts", "./JoystickWindow.ts", "./LaunchWindow.ts", "./LoadingWindow.ts", "./LoginSystem.ts", "./LoginWindow.ts", "./ItemTips.ts", "./MessageTips.ts", "./MessageWindow.ts", "./PlayerTips.ts", "./TextTips.ts", "./TextTipsView.ts", "./WeaponTips.ts", "./AnimationAutoPlay.ts", "./CreatureDress.ts", "./CreatureDressType.ts", "./CreatureImgDress.ts", "./CreatureSkinDress.ts", "./CreatureSlot.ts", "./DogView.ts", "./FrameAnimClip.ts", "./FrameAnimView.ts", "./ICreatureDress.ts", "./LaserLinkView.ts", "./RoleView.ts", "./RotateAnim.ts", "./SpineAutoPlay.ts", "./SpriteColorAnim.ts", "./TalkView.ts", "./proto.mjs_cjs=&original=.js", "./EnemyTest.ts", "./MoveTest.ts", "./SpineTest.ts", "./UITest.ts"], (function() {
     return {
         setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         execute: function() {}
@@ -24279,7 +24281,7 @@ System.register("chunks:///_virtual/MeleeTrigger.ts", ["./rollupPluginModLoBabel
 }
 ));
 
-System.register("chunks:///_virtual/MeleeWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon2.ts", "./WeaponState.ts", "./Creature.ts", "./CreatureManager.ts", "./Kit.ts", "./ResList.ts", "./CreatureView.ts", "./MeleeTrigger.ts"], (function(t) {
+System.register("chunks:///_virtual/MeleeWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon.ts", "./WeaponState.ts", "./Creature.ts", "./CreatureManager.ts", "./Kit.ts", "./ResList.ts", "./CreatureView.ts", "./MeleeTrigger.ts"], (function(t) {
     var i, n, e, a, o, s, r, c, h, u, l, g, f, d, p;
     return {
         setters: [function(t) {
@@ -34811,7 +34813,7 @@ System.register("chunks:///_virtual/Random.ts", ["cc"], (function(t) {
 }
 ));
 
-System.register("chunks:///_virtual/RangedWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon2.ts"], (function(e) {
+System.register("chunks:///_virtual/RangedWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon.ts"], (function(e) {
     var n, t, o, r;
     return {
         setters: [function(e) {
@@ -37115,13 +37117,13 @@ System.register("chunks:///_virtual/Session.ts", ["./rollupPluginModLoBabelHelpe
 ));
 
 System.register("chunks:///_virtual/SessionMessage_Common.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./SessionMessage.ts", "./proto.mjs_cjs=&original=.js", "./MessageId.ts", "./Session.ts", "./Client.ts", "./UIRoot.ts", "./Fight.ts", "./Kit.ts", "./HomeScene.ts", "./Def.ts", "./GameConfig.ts", "./SessionMessage_Login.ts", "./Md5.ts", "./proto.js"], (function(e) {
-    var n, t, i, s, o, a, r, c, d, u, f, l, g, h, m;
+    var t, n, i, s, o, a, r, c, d, u, f, l, g, h, m;
     return {
         setters: [function(e) {
-            n = e.inheritsLoose
+            t = e.inheritsLoose
         }
         , function(e) {
-            t = e.cclegacy
+            n = e.cclegacy
         }
         , function(e) {
             i = e.default
@@ -37164,16 +37166,16 @@ System.register("chunks:///_virtual/SessionMessage_Common.ts", ["./rollupPluginM
         }
         ],
         execute: function() {
-            t._RF.push({}, "68f17DIfiRHELMfSrgXdYZ5", "SessionMessage_Common", void 0),
+            n._RF.push({}, "68f17DIfiRHELMfSrgXdYZ5", "SessionMessage_Common", void 0),
             e("default", function(e) {
-                function t() {
+                function n() {
                     return e.apply(this, arguments) || this
                 }
-                return n(t, e),
-                t.init = function() {
-                    t.cnt = 0;
+                return t(n, e),
+                n.init = function() {
+                    n.cnt = 0;
                     var e = d.config.get(l);
-                    setInterval(t.onHeartbeat, e.Heartbeat),
+                    setInterval(n.onHeartbeat, e.Heartbeat),
                     this.register(s.CommonHandShake, this, this.onHandShake),
                     this.register(s.LogicGMCmd, this, this.onGMcmd),
                     this.register(s.LogicVitUpdate, this, this.onVitUpdate),
@@ -37182,54 +37184,54 @@ System.register("chunks:///_virtual/SessionMessage_Common.ts", ["./rollupPluginM
                     this.register(s.ResponseDesc, this, this.onResponseDesc)
                 }
                 ,
-                t.clientErr = function(e) {
-                    var n = new m.msg.CommonClientErr;
-                    n.Dump = e,
-                    this.send(s.CommonClientErr, n)
+                n.clientErr = function(e) {
+                    var t = new m.msg.CommonClientErr;
+                    t.Dump = e,
+                    this.send(s.CommonClientErr, t)
                 }
                 ,
-                t.onHandShake = function(e) {
-                    var n = e.TS
-                      , t = new m.msg.CommonHandShake
+                n.onHandShake = function(e) {
+                    var t = e.TS
+                      , n = new m.msg.CommonHandShake
                       , i = Math.floor(Date.now() / 1e3);
-                    t.TS = i;
+                    n.TS = i;
                     var o = new h
-                      , a = o.hex_md5(n.toString() + "_" + i.toString() + "_rjsB#dnkA4nN");
-                    t.Sign = o.hex_md5(a),
-                    this.send(s.CommonHandShake, t),
+                      , a = o.hex_md5(t.toString() + "_" + i.toString() + "_rjsB#dnkA4nN");
+                    n.Sign = o.hex_md5(a),
+                    this.send(s.CommonHandShake, n),
                     console.warn("send handshake!", new Date)
                 }
                 ,
-                t.heartbeat = function(e) {
-                    var n = new m.msg.CommonHeartbeat;
-                    n.Cnt = e,
-                    this.send(s.CommonHeartbeat, n)
+                n.heartbeat = function(e) {
+                    var t = new m.msg.CommonHeartbeat;
+                    t.Cnt = e,
+                    this.send(s.CommonHeartbeat, t)
                 }
                 ,
-                t.onHeartbeat = function() {
+                n.onHeartbeat = function() {
                     if (o.ins.isConnected()) {
-                        t.cnt += 1;
-                        var e = t.cnt;
-                        t.heartbeat(e)
+                        n.cnt += 1;
+                        var e = n.cnt;
+                        n.heartbeat(e)
                     }
                 }
                 ,
-                t.GMcmd = function(e) {
-                    var n = new m.msg.LogicGMCmd;
-                    n.Cmd = e,
-                    this.send(s.LogicGMCmd, n)
+                n.GMcmd = function(e) {
+                    var t = new m.msg.LogicGMCmd;
+                    t.Cmd = e,
+                    this.send(s.LogicGMCmd, t)
                 }
                 ,
-                t.onGMcmd = function(e) {
+                n.onGMcmd = function(e) {
                     if (null == e.Hero)
                         if (null == e.Equipment) {
-                            var n = e.Cmd
-                              , t = (n = n.trim()).indexOf(":")
-                              , i = n
+                            var t = e.Cmd
+                              , n = (t = t.trim()).indexOf(":")
+                              , i = t
                               , s = [];
-                            if (-1 != t)
-                                i = n.substring(0, t),
-                                s = n.substring(t + 1, n.length).split(",");
+                            if (-1 != n)
+                                i = t.substring(0, n),
+                                s = t.substring(n + 1, t.length).split(",");
                             if ("" == i)
                                 ;
                             else if ("material" == i) {
@@ -37253,26 +37255,26 @@ System.register("chunks:///_virtual/SessionMessage_Common.ts", ["./rollupPluginM
                     }
                 }
                 ,
-                t.onResponseDesc = function(e) {}
+                n.onResponseDesc = function(e) {}
                 ,
-                t.vitUpdate = function() {
+                n.vitUpdate = function() {
                     var e = new m.msg.HeroVitUpdate;
                     this.send(s.HeroVitUpdate, e)
                 }
                 ,
-                t.onVitUpdate = function(e) {
+                n.onVitUpdate = function(e) {
                     a.user.setVit(e.Vit)
                 }
                 ,
-                t.onActivityUpdate = function(e) {
+                n.onActivityUpdate = function(e) {
                     console.log("activity:", e.Activity)
                 }
                 ,
-                t.onHeroVitUpdate = function(e) {
+                n.onHeroVitUpdate = function(e) {
                     a.hero.setHeroVits(e.HVits)
                 }
                 ,
-                t.onDisConnected = function() {
+                n.onDisConnected = function() {
                     var e = this;
                     d.scene.currScene.disConnected(),
                     r.messageBox.setMesage("You have been disconnected. Please log in again.", d.handler(this, (function() {
@@ -37282,21 +37284,19 @@ System.register("chunks:///_virtual/SessionMessage_Common.ts", ["./rollupPluginM
                     r.messageBox.open()
                 }
                 ,
-                t.reconnect = function() {
+                n.reconnect = function() {
                     if (!o.ins.isConnected()) {
-                        d.scene.change(f.Empty);
-                        var e = d.config.get(l);
-                        console.log(e.Version),
-                        o.ins.connect(e.ServerWss);
-                        var n = d.global.get("login.openID")
+                        d.scene.change(f.Empty),
+                        o.ins.connect(a.user.data.link);
+                        var e = d.global.get("login.openID")
                           , t = d.global.get("login.code");
-                        n && t && g.login(n, t)
+                        e && t && g.login(e, t)
                     }
                 }
                 ,
-                t
+                n
             }(i)).cnt = void 0,
-            t._RF.pop()
+            n._RF.pop()
         }
     }
 }
@@ -37429,12 +37429,10 @@ System.register("chunks:///_virtual/SessionMessage_Fight.ts", ["./rollupPluginMo
                 ,
                 n.monsterAtk = function(e) {
                     var t, n = new c.msg.GameMonsterAtk;
-                    (t = n.Atks).push.apply(t, e);
-                        // 50% chance to send the message
-                    if (Math.random() < 0.01) {
+                    (t = n.Atks).push.apply(t, e),
+                    if (Math.random() < 0.03) {
                         this.send(u.GameMonsterAtk, n)
                     }
-                    
                 }
                 ,
                 n.onMonsterAtk = function(e) {
@@ -37462,9 +37460,8 @@ System.register("chunks:///_virtual/SessionMessage_Fight.ts", ["./rollupPluginMo
                 ,
                 n.gameDmgEx = function(e) {
                     var t, n = new c.msg.GameDmgEx;
-                    (t = n.CltDmg).push.apply(t, e);
-this.send(u.GameDmgEx, n);
-                    
+                    (t = n.CltDmg).push.apply(t, e),
+                    this.send(u.GameDmgEx, n)
                 }
                 ,
                 n.onGameDmgEx = function(e) {
@@ -37788,7 +37785,7 @@ System.register("chunks:///_virtual/SetAction.ts", ["./rollupPluginModLoBabelHel
 }
 ));
 
-System.register("chunks:///_virtual/ShurikenWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon2.ts", "./Kit.ts", "./CreatureManager.ts", "./ResList.ts", "./CreatureType.ts", "./BattleDef.ts"], (function(t) {
+System.register("chunks:///_virtual/ShurikenWeapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon.ts", "./Kit.ts", "./CreatureManager.ts", "./ResList.ts", "./CreatureType.ts", "./BattleDef.ts"], (function(t) {
     var e, i, n, r, a, o, l, u, s, p, c, f, h;
     return {
         setters: [function(t) {
@@ -42878,8 +42875,8 @@ System.register("chunks:///_virtual/UserData.ts", ["./rollupPluginModLoBabelHelp
             e._RF.push({}, "28105wWmPBGfq2lui95wKuu", "UserData", void 0);
             i("default", function(i) {
                 function e() {
-                    for (var o, e = arguments.length, t = new Array(e), r = 0; r < e; r++)
-                        t[r] = arguments[r];
+                    for (var o, e = arguments.length, t = new Array(e), v = 0; v < e; v++)
+                        t[v] = arguments[v];
                     return (o = i.call.apply(i, [this].concat(t)) || this).IsGUESS = void 0,
                     o.DISCORD_CODE = void 0,
                     o.DISCORD_TOKEN_TYPE = void 0,
@@ -42893,6 +42890,7 @@ System.register("chunks:///_virtual/UserData.ts", ["./rollupPluginModLoBabelHelp
                     o.userID = void 0,
                     o.openID = void 0,
                     o.code = void 0,
+                    o.link = void 0,
                     o.createTime = void 0,
                     o.coin = 0,
                     o.money1 = n(0),
@@ -43221,265 +43219,7 @@ System.register("chunks:///_virtual/UtilsSystem.ts", ["./rollupPluginModLoBabelH
 }
 ));
 
-System.register("chunks:///_virtual/Weapon.ts", ["cc", "./SessionMessage_Fight.ts", "./BattleMgr.ts", "./BattleDef.ts", "./ExtraEffectType.ts", "./ObjMgr.ts", "./proto.mjs_cjs=&original=.js", "./proto.js"], (function(t) {
-    var e, n, i, o, s, a, r;
-    return {
-        setters: [function(t) {
-            e = t.cclegacy
-        }
-        , function(t) {
-            n = t.default
-        }
-        , function(t) {
-            i = t.BattleMgr
-        }
-        , function(t) {
-            o = t.AtkObjType
-        }
-        , function(t) {
-            s = t.WeaponExtraEffectType
-        }
-        , function(t) {
-            a = t.default
-        }
-        , null, function(t) {
-            r = t.default
-        }
-        ],
-        execute: function() {
-            e._RF.push({}, "8e369dsdk1Iwr2SQOyBqPJW", "Weapon", void 0);
-            t("WeaponObj", function() {
-                function t() {
-                    this.owner = void 0,
-                    this.mgr = void 0,
-                    this.cfgWeapon = null,
-                    this.aosn = void 0,
-                    this.wInfo = null,
-                    this.atkTick = 0,
-                    this.atkTime = 0,
-                    this.node = void 0,
-                    this.extraType = 0,
-                    this.extraCfg = [],
-                    this.extraVal = [],
-                    this.stageDmg = 0
-                }
-                var e = t.prototype;
-                return e.init = function(t, e, n) {
-                    this.cfgWeapon = DataCenter.Weapon.Get(t.WID);
-                    var i, o = this.cfgWeapon.ExtraValues;
-                    o && o.length > 0 && (this.extraType = o[0],
-                    (i = this.extraCfg).push.apply(i, o),
-                    this.extraType == s.AtkSpeed && this.extraVal.push(0));
-                    this.owner = e,
-                    this.mgr = n,
-                    this.aosn = a.ins.generateAtkObjSN(),
-                    this.syncInfo(t)
-                }
-                ,
-                e.destroy = function() {
-                    this.cfgWeapon = null,
-                    this.owner = null,
-                    this.mgr = null,
-                    this.node = null
-                }
-                ,
-                e.syncInfo = function(t) {
-                    this.wInfo = t,
-                    this.atkTime = this.wInfo.AtkIntl + this.wInfo.AtkCD,
-                    this.node && this.updateWeaponViewNode()
-                }
-                ,
-                e.updateAttr = function(t, e) {
-                    for (var n = 0; n < t.length; n++) {
-                        var i = t[n]
-                          , o = e[n];
-                        switch (i) {
-                        case r.msg.WeaponAttrType.WAT_Dmg:
-                            this.wInfo.Dmg = o;
-                            break;
-                        case r.msg.WeaponAttrType.WAT_DmgCritical:
-                            this.wInfo.DmgCritical = o;
-                            break;
-                        case r.msg.WeaponAttrType.WAT_AtkLength:
-                            this.wInfo.AtkIntl = o,
-                            this.atkTime = this.wInfo.AtkIntl + this.wInfo.AtkCD,
-                            this.updateWeaponViewNode();
-                            break;
-                        case r.msg.WeaponAttrType.WAT_AtkRange:
-                            this.wInfo.AtkRange = o,
-                            this.updateWeaponViewNode();
-                            break;
-                        case r.msg.WeaponAttrType.WAT_Knockback:
-                            this.wInfo.Knockback = o
-                        }
-                    }
-                }
-                ,
-                e.getWSN = function() {
-                    return this.wInfo.SN
-                }
-                ,
-                e.getCfgID = function() {
-                    return this.wInfo.WID
-                }
-                ,
-                e.getName = function() {
-                    return this.cfgWeapon.Name
-                }
-                ,
-                e.getWeaponConfig = function() {
-                    return this.cfgWeapon
-                }
-                ,
-                e.getAttrEffect = function() {
-                    return this.cfgWeapon.AttrEffect
-                }
-                ,
-                e.getBuffs = function() {
-                    return this.cfgWeapon.Buff
-                }
-                ,
-                e.getAppendBuff = function() {
-                    return this.cfgWeapon.AppendBuff
-                }
-                ,
-                e.getExtraVals = function() {
-                    return this.cfgWeapon.ExtraValues
-                }
-                ,
-                e.isMaxLvl = function() {
-                    return 0 == this.cfgWeapon.NextID
-                }
-                ,
-                e.setWeaponViewNode = function(t) {
-                    this.node = t,
-                    this.updateWeaponViewNode()
-                }
-                ,
-                e.isDead = function() {
-                    return !1
-                }
-                ,
-                e.getDmg = function() {
-                    return this.wInfo.Dmg
-                }
-                ,
-                e.getDmgCritical = function() {
-                    return this.wInfo.DmgCritical
-                }
-                ,
-                e.getAOType = function() {
-                    return o.Weapon
-                }
-                ,
-                e.getAOID = function() {
-                    return this.wInfo.WID
-                }
-                ,
-                e.getKnockBack = function() {
-                    return this.wInfo.Knockback
-                }
-                ,
-                e.getTargetMax = function() {
-                    return this.wInfo.AtkMax
-                }
-                ,
-                e.getOwnerSN = function() {
-                    return this.owner.getSN()
-                }
-                ,
-                e.getAOSN = function() {
-                    return this.aosn
-                }
-                ,
-                e.getWeaponID = function() {
-                    return this.wInfo.WID
-                }
-                ,
-                e.setAtkTick = function(t) {
-                    this.atkTick = t
-                }
-                ,
-                e.getLastAtkTick = function() {
-                    return this.atkTick
-                }
-                ,
-                e.getAtkIntl = function() {
-                    return this.wInfo.AtkIntl
-                }
-                ,
-                e.getAtkTime = function() {
-                    return this.atkTime
-                }
-                ,
-                e.onStageStart = function() {
-                    var t = !1;
-                    return this.stageDmg = 0,
-                    this.extraType == s.AtkSpeed && (t = !0,
-                    this.extraVal[0] = this.extraCfg[1],
-                    i.ins.getStage().getWave() > 1 && n.weaponUpdate(this.getWSN())),
-                    t
-                }
-                ,
-                e.onUpdate = function() {
-                    this.extraType == s.AtkSpeed && i.ins.getStage().getStageDuration() >= this.extraVal[0] && (this.extraVal[0] += this.extraCfg[1],
-                    n.weaponUpdate(this.getWSN()))
-                }
-                ,
-                e.getAtkLength = function() {
-                    return this.wInfo.AtkIntl
-                }
-                ,
-                e.getAtkCD = function() {
-                    return this.wInfo.AtkCD
-                }
-                ,
-                e.getAtkRadius = function() {
-                    return this.wInfo.AtkRange
-                }
-                ,
-                e.getNode = function() {
-                    return this.node
-                }
-                ,
-                e.canAtk = function() {
-                    return this.owner.getAttr().canAtk()
-                }
-                ,
-                e.getAtkX = function() {
-                    return this.cfgWeapon.AtkX
-                }
-                ,
-                e.updateWeaponViewNode = function() {
-                    this.node && (this.node.setAttackDuration(this.getAtkLength()),
-                    this.node.setAttackRegion(this.getAtkRadius()),
-                    this.getAtkCD() > 0 && this.node.setCD(this.getAtkCD()),
-                    this.cfgWeapon.DartleCount > 0 && this.node.setDartleCount(this.cfgWeapon.DartleCount),
-                    this.cfgWeapon.DartleInterval > 0 && this.node.setDartleInterval(this.cfgWeapon.DartleInterval),
-                    this.cfgWeapon.BulletCount > 0 && this.node.setBulletCount(this.cfgWeapon.BulletCount))
-                }
-                ,
-                e.onAtked = function(t, e, n, i, o) {
-                    this.stageDmg += n
-                }
-                ,
-                e.addStageDmg = function(t) {
-                    this.stageDmg += t
-                }
-                ,
-                e.getStageDmg = function() {
-                    return this.stageDmg
-                }
-                ,
-                t
-            }());
-            e._RF.pop()
-        }
-    }
-}
-));
-
-System.register("chunks:///_virtual/Weapon2.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Kit.ts", "./WeaponState.ts", "./WeaponAI.ts"], (function(t) {
+System.register("chunks:///_virtual/Weapon.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Kit.ts", "./WeaponState.ts", "./WeaponAI.ts"], (function(t) {
     var i, e, n, a, s, o, r, c, h, l, u, d, k, f, p;
     return {
         setters: [function(t) {
@@ -43776,7 +43516,265 @@ System.register("chunks:///_virtual/Weapon2.ts", ["./rollupPluginModLoBabelHelpe
 }
 ));
 
-System.register("chunks:///_virtual/WeaponAgent.ts", ["cc", "./Weapon2.ts", "./Kit.ts"], (function(i) {
+System.register("chunks:///_virtual/Weapon2.ts", ["cc", "./SessionMessage_Fight.ts", "./BattleMgr.ts", "./BattleDef.ts", "./ExtraEffectType.ts", "./ObjMgr.ts", "./proto.mjs_cjs=&original=.js", "./proto.js"], (function(t) {
+    var e, n, i, o, s, a, r;
+    return {
+        setters: [function(t) {
+            e = t.cclegacy
+        }
+        , function(t) {
+            n = t.default
+        }
+        , function(t) {
+            i = t.BattleMgr
+        }
+        , function(t) {
+            o = t.AtkObjType
+        }
+        , function(t) {
+            s = t.WeaponExtraEffectType
+        }
+        , function(t) {
+            a = t.default
+        }
+        , null, function(t) {
+            r = t.default
+        }
+        ],
+        execute: function() {
+            e._RF.push({}, "8e369dsdk1Iwr2SQOyBqPJW", "Weapon", void 0);
+            t("WeaponObj", function() {
+                function t() {
+                    this.owner = void 0,
+                    this.mgr = void 0,
+                    this.cfgWeapon = null,
+                    this.aosn = void 0,
+                    this.wInfo = null,
+                    this.atkTick = 0,
+                    this.atkTime = 0,
+                    this.node = void 0,
+                    this.extraType = 0,
+                    this.extraCfg = [],
+                    this.extraVal = [],
+                    this.stageDmg = 0
+                }
+                var e = t.prototype;
+                return e.init = function(t, e, n) {
+                    this.cfgWeapon = DataCenter.Weapon.Get(t.WID);
+                    var i, o = this.cfgWeapon.ExtraValues;
+                    o && o.length > 0 && (this.extraType = o[0],
+                    (i = this.extraCfg).push.apply(i, o),
+                    this.extraType == s.AtkSpeed && this.extraVal.push(0));
+                    this.owner = e,
+                    this.mgr = n,
+                    this.aosn = a.ins.generateAtkObjSN(),
+                    this.syncInfo(t)
+                }
+                ,
+                e.destroy = function() {
+                    this.cfgWeapon = null,
+                    this.owner = null,
+                    this.mgr = null,
+                    this.node = null
+                }
+                ,
+                e.syncInfo = function(t) {
+                    this.wInfo = t,
+                    this.atkTime = this.wInfo.AtkIntl + this.wInfo.AtkCD,
+                    this.node && this.updateWeaponViewNode()
+                }
+                ,
+                e.updateAttr = function(t, e) {
+                    for (var n = 0; n < t.length; n++) {
+                        var i = t[n]
+                          , o = e[n];
+                        switch (i) {
+                        case r.msg.WeaponAttrType.WAT_Dmg:
+                            this.wInfo.Dmg = o;
+                            break;
+                        case r.msg.WeaponAttrType.WAT_DmgCritical:
+                            this.wInfo.DmgCritical = o;
+                            break;
+                        case r.msg.WeaponAttrType.WAT_AtkLength:
+                            this.wInfo.AtkIntl = o,
+                            this.atkTime = this.wInfo.AtkIntl + this.wInfo.AtkCD,
+                            this.updateWeaponViewNode();
+                            break;
+                        case r.msg.WeaponAttrType.WAT_AtkRange:
+                            this.wInfo.AtkRange = o,
+                            this.updateWeaponViewNode();
+                            break;
+                        case r.msg.WeaponAttrType.WAT_Knockback:
+                            this.wInfo.Knockback = o
+                        }
+                    }
+                }
+                ,
+                e.getWSN = function() {
+                    return this.wInfo.SN
+                }
+                ,
+                e.getCfgID = function() {
+                    return this.wInfo.WID
+                }
+                ,
+                e.getName = function() {
+                    return this.cfgWeapon.Name
+                }
+                ,
+                e.getWeaponConfig = function() {
+                    return this.cfgWeapon
+                }
+                ,
+                e.getAttrEffect = function() {
+                    return this.cfgWeapon.AttrEffect
+                }
+                ,
+                e.getBuffs = function() {
+                    return this.cfgWeapon.Buff
+                }
+                ,
+                e.getAppendBuff = function() {
+                    return this.cfgWeapon.AppendBuff
+                }
+                ,
+                e.getExtraVals = function() {
+                    return this.cfgWeapon.ExtraValues
+                }
+                ,
+                e.isMaxLvl = function() {
+                    return 0 == this.cfgWeapon.NextID
+                }
+                ,
+                e.setWeaponViewNode = function(t) {
+                    this.node = t,
+                    this.updateWeaponViewNode()
+                }
+                ,
+                e.isDead = function() {
+                    return !1
+                }
+                ,
+                e.getDmg = function() {
+                    return this.wInfo.Dmg
+                }
+                ,
+                e.getDmgCritical = function() {
+                    return this.wInfo.DmgCritical
+                }
+                ,
+                e.getAOType = function() {
+                    return o.Weapon
+                }
+                ,
+                e.getAOID = function() {
+                    return this.wInfo.WID
+                }
+                ,
+                e.getKnockBack = function() {
+                    return this.wInfo.Knockback
+                }
+                ,
+                e.getTargetMax = function() {
+                    return this.wInfo.AtkMax
+                }
+                ,
+                e.getOwnerSN = function() {
+                    return this.owner.getSN()
+                }
+                ,
+                e.getAOSN = function() {
+                    return this.aosn
+                }
+                ,
+                e.getWeaponID = function() {
+                    return this.wInfo.WID
+                }
+                ,
+                e.setAtkTick = function(t) {
+                    this.atkTick = t
+                }
+                ,
+                e.getLastAtkTick = function() {
+                    return this.atkTick
+                }
+                ,
+                e.getAtkIntl = function() {
+                    return this.wInfo.AtkIntl
+                }
+                ,
+                e.getAtkTime = function() {
+                    return this.atkTime
+                }
+                ,
+                e.onStageStart = function() {
+                    var t = !1;
+                    return this.stageDmg = 0,
+                    this.extraType == s.AtkSpeed && (t = !0,
+                    this.extraVal[0] = this.extraCfg[1],
+                    i.ins.getStage().getWave() > 1 && n.weaponUpdate(this.getWSN())),
+                    t
+                }
+                ,
+                e.onUpdate = function() {
+                    this.extraType == s.AtkSpeed && i.ins.getStage().getStageDuration() >= this.extraVal[0] && (this.extraVal[0] += this.extraCfg[1],
+                    n.weaponUpdate(this.getWSN()))
+                }
+                ,
+                e.getAtkLength = function() {
+                    return this.wInfo.AtkIntl
+                }
+                ,
+                e.getAtkCD = function() {
+                    return this.wInfo.AtkCD
+                }
+                ,
+                e.getAtkRadius = function() {
+                    return this.wInfo.AtkRange
+                }
+                ,
+                e.getNode = function() {
+                    return this.node
+                }
+                ,
+                e.canAtk = function() {
+                    return this.owner.getAttr().canAtk()
+                }
+                ,
+                e.getAtkX = function() {
+                    return this.cfgWeapon.AtkX
+                }
+                ,
+                e.updateWeaponViewNode = function() {
+                    this.node && (this.node.setAttackDuration(this.getAtkLength()),
+                    this.node.setAttackRegion(this.getAtkRadius()),
+                    this.getAtkCD() > 0 && this.node.setCD(this.getAtkCD()),
+                    this.cfgWeapon.DartleCount > 0 && this.node.setDartleCount(this.cfgWeapon.DartleCount),
+                    this.cfgWeapon.DartleInterval > 0 && this.node.setDartleInterval(this.cfgWeapon.DartleInterval),
+                    this.cfgWeapon.BulletCount > 0 && this.node.setBulletCount(this.cfgWeapon.BulletCount))
+                }
+                ,
+                e.onAtked = function(t, e, n, i, o) {
+                    this.stageDmg += n
+                }
+                ,
+                e.addStageDmg = function(t) {
+                    this.stageDmg += t
+                }
+                ,
+                e.getStageDmg = function() {
+                    return this.stageDmg
+                }
+                ,
+                t
+            }());
+            e._RF.pop()
+        }
+    }
+}
+));
+
+System.register("chunks:///_virtual/WeaponAgent.ts", ["cc", "./Weapon.ts", "./Kit.ts"], (function(i) {
     var t, e, s, n, h, a, o;
     return {
         setters: [function(i) {
@@ -44183,7 +44181,7 @@ System.register("chunks:///_virtual/WeaponAI.ts", ["./rollupPluginModLoBabelHelp
 }
 ));
 
-System.register("chunks:///_virtual/WeaponCom.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./proto.mjs_cjs=&original=.js", "./CharCom.ts", "./Weapon.ts", "./proto.js"], (function(t) {
+System.register("chunks:///_virtual/WeaponCom.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./proto.mjs_cjs=&original=.js", "./CharCom.ts", "./Weapon2.ts", "./proto.js"], (function(t) {
     var e, n, o, a, s;
     return {
         setters: [function(t) {
@@ -44385,7 +44383,7 @@ System.register("chunks:///_virtual/WeaponCom.ts", ["./rollupPluginModLoBabelHel
 }
 ));
 
-System.register("chunks:///_virtual/WeaponEditor.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon2.ts", "./Kit.ts"], (function(e) {
+System.register("chunks:///_virtual/WeaponEditor.ts", ["./rollupPluginModLoBabelHelpers.js", "cc", "./Weapon.ts", "./Kit.ts"], (function(e) {
     var t, n, i, o, r, a, c, p, u, l, s, d, f, y;
     return {
         setters: [function(e) {
