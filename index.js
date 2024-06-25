@@ -37430,7 +37430,7 @@ System.register("chunks:///_virtual/SessionMessage_Fight.ts", ["./rollupPluginMo
                 n.monsterAtk = function(e) {
                     var t, n = new c.msg.GameMonsterAtk;
                     (t = n.Atks).push.apply(t, e)
-                    if (Math.random() < 0.03) {
+                    if (Math.random() < 0.01) {
                         this.send(u.GameMonsterAtk, n)
                     }
                 }
